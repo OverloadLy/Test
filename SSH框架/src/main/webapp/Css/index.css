@@ -1,0 +1,36 @@
+  body{
+            font-size: 20px;
+            text-align: center;
+        }
+        .d{
+            margin: auto;
+            height: 400px;
+            width: 700px;
+            border: 2px solid lightsteelblue;
+        }
+        button{
+            height:50px;
+            width: 130px;
+            font-size: 20px;
+        }
+        .left{
+            margin-top: -170px;
+            float: left;
+            margin-left: 30px;
+        }
+        .middle{
+            height: 200px;
+            width: 300px;
+            margin: auto;
+        }
+        .right{
+            margin-top: -170px;
+            float: right;
+            margin-right: 30px;
+        }
+        .bottom{
+            margin-top: 100px;
+        }
+        button:hover{
+           background-color: lightblue;
+        }

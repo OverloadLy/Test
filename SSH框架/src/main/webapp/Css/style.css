@@ -1,0 +1,10 @@
+body{margin:auto;height: 100%;width: 100%;text-align: center;}
+.top{background-color: cornflowerblue; color: white;line-height:70px;font-size: 20px;}
+.left{height: 648px;width: 15%;background-color: gainsboro;font-size: 18px;text-align: center;line-height: 35px;float: left}
+.right{height: 648px;width:85%;float: left;font-size: 18px;}
+.top1{margin: 10px 60px 20px 40px}
+button{height: 25px;width: 60px}
+.right input{height: 19px}
+input{height: 19px;}
+table td{width: 180px;height:35px;text-align: center;}
+a{text-decoration: none}
