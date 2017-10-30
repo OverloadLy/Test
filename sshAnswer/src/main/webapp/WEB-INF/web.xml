@@ -1,0 +1,29 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+
+	<display-name>sshAnswer</display-name>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener> 
+  
+  <!-- strcut2核心过滤器 -->
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+      <dispatcher>REQUEST</dispatcher>
+      <dispatcher>FORWARD</dispatcher>   
+  </filter-mapping>
+  
+	<welcome-file-list>
+		<welcome-file>NewFile.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
+

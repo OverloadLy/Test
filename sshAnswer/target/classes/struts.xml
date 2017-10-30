@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">  
+     
+        <action name="*_action" class="action.PaperAction" method="{1}">
+            <result name="index">/student/index.jsp</result>  
+            <result name="result">/student/examResult.jsp</result>   
+            <allowed-methods>begin,saveAnswer</allowed-methods>
+        </action>
+        
+        
+        <action name="login" class="action.LoginAction">
+            <result name="studentSuccess" type="chain">begin_action</result>
+ 		    <result name="teacherSuccess" type="redirect">/teacher/index.html</result>
+ 		    <result name="login">/login.jsp</result>  
+        </action>
+        
+         <action name="*_paper" class="action.TeacherAction" method="{1}">     
+            <result name="findAll" >/teacher/subjectManage.jsp</result>  
+            <result name="addOk" >/teacher/subjectManage.jsp</result> 
+            <result name="findOne">/teacher/subjectUpdate.jsp</result>
+            <result name="findClass" >/teacher/studentManage.jsp</result>
+            <result name="update">/teacher/subjectManage.jsp</result>
+            <allowed-methods>add,findAll,findOne,delete,findClass,update</allowed-methods>
+        </action>
+      
+   </package>  
+</struts>
+
