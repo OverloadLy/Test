@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd ">
+
+<!-- 映射器名字空间，即BlogMapper对象的完整路径名 -->
+<mapper namespace="com.cqust.dao.UserMapper">
+
+<!-- 登陆查询 -->
+<select id="login" parameterType="String" resultType="User">
+	select *from user where name=#{0} and pass=#{1}
+</select>
+
+<!-- 查询所有-->
+<select id="findAll" resultType="User">
+     select *from user
+</select>
+
+<!-- 分页SQL语句 -->  
+<select id="findUsesrByPage" parameterType="int" resultType="User">  
+   select * from user limit #{0},#{1}   
+</select>  
+
+<!-- 取得记录的总数 -->  
+<select id="getUsersCount" resultType="int">  
+  select count(*) from user   
+</select> 
+
+<!-- 查询 （ID) -->
+<select id="findOne" parameterType="int" resultType="User">
+	select *from user where id=#{id}
+</select>
+
+<!-- 增加-->
+<insert id="addUser" parameterType="User">
+    insert into
+		user(id,name,pass)
+		values(#{id},#{name},#{pass})
+</insert>
+
+<!-- 删除 -->
+<delete id="deleteUser" parameterType="int">
+    delete from User where id=#{id}
+</delete>
+
+<!-- 修改 -->
+<update id="updateUser" parameterType="User">
+ 	update user set name=#{name},pass=#{pass} where id=#{id}
+</update>
+
+</mapper>
+
+
